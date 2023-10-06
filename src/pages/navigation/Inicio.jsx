@@ -4,22 +4,18 @@ import React from "react";
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-  background-color: #fff;
-  padding: 10px;
+  /* padding: 10px; */
 `;
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-color: silver;
+  background-color: #FFFFFF;
   width: 100%;
   height: 100%;
-  box-shadow: 0px 2px 5px #000;
-  border-radius: 8px;
 `;
 
-const CompanyName = styled.h1`
+const Title = styled.h1`
   font-size: 40px;
 `;
 
@@ -31,7 +27,7 @@ const Inicio = () => {
   return (
     <Wrapper>
       <Container>
-        <CompanyName>Sistema Tars</CompanyName>
+        <Title>Sistema Tars</Title>
         <Subtitle>Bem vindo ao sistema de gerenciamento de tars</Subtitle>
       </Container>
     </Wrapper>

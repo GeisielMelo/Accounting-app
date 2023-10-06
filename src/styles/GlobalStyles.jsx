@@ -10,6 +10,10 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
 }
 
+body  {
+    background-color: #ffffff;
+}
+
 // Custom scroll bar
 ::-webkit-scrollbar {
     width: 5px;

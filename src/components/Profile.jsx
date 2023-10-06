@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
@@ -36,12 +36,15 @@ const Button = styled.button`
   border: none;
   cursor: pointer;
   overflow: hidden;
-  box-shadow: 0 1px 5px black;
+  box-shadow: 0 1px 5px ${(props) => (props.shadow ? "green" : "black")};;
   background-color: transparent;
-  color: #fff;
+  color: #3b3b4f;
   transition: all 0.2s ease-in-out;
   &:hover {
-    box-shadow: 0 1px 5px #086ab1;
+    box-shadow: 0 1px 5px #6453e4;
+  }
+  &:disabled {
+    cursor: default;
   }
 `;
 
@@ -57,6 +60,7 @@ const Name = styled.h1`
   font-weight: 500;
   line-height: 150%;
   text-transform: capitalize;
+  font-family: ${(props) => props.theme.font.family.one};
 `;
 
 const Email = styled.h2`
@@ -65,6 +69,7 @@ const Email = styled.h2`
   font-weight: 400;
   line-height: 150%;
   color: #b7b5b5;
+  font-family: ${(props) => props.theme.font.family.one};
 `;
 
 const Option = styled.p`
@@ -75,6 +80,7 @@ const Option = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
+  font-family: ${(props) => props.theme.font.family.two};
 
   &:hover {
     border-radius: 4px;
@@ -85,10 +91,18 @@ const Option = styled.p`
 const Profile = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  useEffect(() => {
+    if (menuOpen) {
+      setTimeout(() => {
+        setMenuOpen(false);
+      }, 5000);
+    }
+  }, [menuOpen]);
+
   return (
     <>
       <User>
-        <Button onClick={(e) => setMenuOpen(!menuOpen)}>
+        <Button disabled={menuOpen} shadow={menuOpen} onClick={(e) => setMenuOpen(!menuOpen)}>
           <Image>
             <AccountCircleIcon fontSize="large" />
           </Image>
