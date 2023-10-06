@@ -14,7 +14,6 @@ import CadastroClientes from "./pages/navigation/CadastroClientes";
 import CadastroContaContabil from "./pages/navigation/CadastroContaContabil";
 import CadastroPlanoContas from "./pages/navigation/CadastroPlanoContas";
 import CadastroDeparaHistorico from "./pages/navigation/CadastroDeparaHistorico";
-import Usuario from "./pages/navigation/Usuario";
 
 const AppRoutes = () => {
   return (
@@ -33,7 +32,6 @@ const AppRoutes = () => {
         <Route path="/cadastro-conta-contabil" element={<Workbench><CadastroContaContabil/></Workbench>} />
         <Route path="/cadastro-plano-contas" element={<Workbench><CadastroPlanoContas/></Workbench>} />
         <Route path="/cadastro-depara-historico" element={<Workbench><CadastroDeparaHistorico/></Workbench>} />
-        <Route path="/usuario" element={<Workbench><Usuario/></Workbench>} />
       </Routes>
     </BrowserRouter>
   );
