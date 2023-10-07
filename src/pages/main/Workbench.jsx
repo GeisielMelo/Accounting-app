@@ -111,7 +111,7 @@ const Workbench = ({ children, title, page }) => {
   };
 
   const handleMenuClick = () => {
-    setDisableMenu(true);
+    setDisableMenu(true); // disable menu for a few seconds to avoid spamming.
     setIsMenuOpen(!isMenuOpen);
 
     if (isMenuOpen) {
