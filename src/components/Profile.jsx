@@ -36,7 +36,7 @@ const Button = styled.button`
   border: none;
   cursor: pointer;
   overflow: hidden;
-  box-shadow: 0 1px 5px ${(props) => (props.shadow ? "green" : "black")};;
+  box-shadow: 0 1px 5px ${(props) => (props["data-shadow"] ? "green" : "black")};
   background-color: transparent;
   color: #3b3b4f;
   transition: all 0.2s ease-in-out;
@@ -102,7 +102,7 @@ const Profile = () => {
   return (
     <>
       <User>
-        <Button disabled={menuOpen} shadow={menuOpen} onClick={(e) => setMenuOpen(!menuOpen)}>
+        <Button disabled={menuOpen} data-shadow={menuOpen} onClick={(e) => setMenuOpen(!menuOpen)}>
           <Image>
             <AccountCircleIcon fontSize="large" />
           </Image>

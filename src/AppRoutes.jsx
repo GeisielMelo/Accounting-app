@@ -23,15 +23,71 @@ const AppRoutes = () => {
         <Route path="/sign-up" element={<Register />} />
         <Route path="/" element={<Index />} />
         <Route path="*" element={<Login />} />
-        
-        <Route path="/home" element={<Workbench><Inicio/></Workbench>} />
-        <Route path="/quebrar-arquivo" element={<Workbench><QuebrarArquivo/></Workbench>} />
-        <Route path="/extrato-bancario" element={<Workbench><ExtratoBancario/></Workbench>} />
-        <Route path="/atualizar-usuario" element={<Workbench><AtualizarUsuario/></Workbench>} />
-        <Route path="/cadastro-clientes" element={<Workbench><CadastroClientes/></Workbench>} />
-        <Route path="/cadastro-conta-contabil" element={<Workbench><CadastroContaContabil/></Workbench>} />
-        <Route path="/cadastro-plano-contas" element={<Workbench><CadastroPlanoContas/></Workbench>} />
-        <Route path="/cadastro-depara-historico" element={<Workbench><CadastroDeparaHistorico/></Workbench>} />
+
+        <Route
+          path="/home"
+          element={
+            <Workbench title="Inicio" page="0">
+              <Inicio />
+            </Workbench>
+          }
+        />
+        <Route
+          path="/quebrar-arquivo"
+          element={
+            <Workbench title="Quebrar arquivo" page="1">
+              <QuebrarArquivo />
+            </Workbench>
+          }
+        />
+        <Route
+          path="/extrato-bancario"
+          element={
+            <Workbench title="Lançamento Extrato Bancário" page="2">
+              <ExtratoBancario />
+            </Workbench>
+          }
+        />
+        <Route
+          path="/atualizar-usuario"
+          element={
+            <Workbench title="Atualizar Usuário" page="3">
+              <AtualizarUsuario />
+            </Workbench>
+          }
+        />
+        <Route
+          path="/cadastro-clientes"
+          element={
+            <Workbench title="Cadastro Clientes" page="4">
+              <CadastroClientes />
+            </Workbench>
+          }
+        />
+        <Route
+          path="/cadastro-conta-contabil"
+          element={
+            <Workbench title="Cadastro Conta Contábil" page="5">
+              <CadastroContaContabil />
+            </Workbench>
+          }
+        />
+        <Route
+          path="/cadastro-plano-contas"
+          element={
+            <Workbench title="Cadastro Plano Contas" page="6">
+              <CadastroPlanoContas />
+            </Workbench>
+          }
+        />
+        <Route
+          path="/cadastro-depara-historico"
+          element={
+            <Workbench title="Cadastro Depara Histórico" page="7">
+              <CadastroDeparaHistorico />
+            </Workbench>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

@@ -26,7 +26,7 @@ const Menu = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: ${(props) => (props.show ? "250px" : "50px")};
+  max-width: ${(props) => (props["data-show"] ? "250px" : "50px")};
   width: 100%;
   transition: all 0.3s;
   border-right: 1px solid #e8e7ee;
@@ -40,13 +40,13 @@ const Content = styled.div`
 `;
 
 const Title = styled.div`
-  position: ${(props) => (props.show ? "static" : "absolute")};
-  top: ${(props) => (props.show ? "0" : "-60px")};
+  position: ${(props) => (props["data-show"] ? "static" : "absolute")};
+  top: ${(props) => (props["data-show"] ? "0" : "-60px")};
   display: flex;
   align-items: center;
   height: 60px;
   background-color: #fff;
-  border-bottom: ${(props) => (props.show ? "1px solid" : "none")};
+  border-bottom: ${(props) => (props["data-show"] ? "1px solid" : "none")};
   border-color: #e8e7ee;
   font-family: ${(props) => props.theme.font.family.one};
   h1 {
@@ -63,15 +63,15 @@ const LogoImg = styled.img`
 const Button = styled.button`
   display: flex;
   align-items: center;
-  justify-content: ${(props) => (props.centralized ? "left" : "center")};
-  color: ${(props) => (props.lastPressed ? "#6453e4" : "#3b3b4f")};
-  background-color: ${(props) => (props.lastPressed ? "#f3f0ff" : "#fff")};
+  justify-content: ${(props) => (props["data-centralized"] ? "left" : "center")};
+  color: ${(props) => (props["data-last-pressed"] ? "#6453e4" : "#3b3b4f")};
+  background-color: ${(props) => (props["data-last-pressed"] ? "#f3f0ff" : "#fff")};
   max-width: 220px;
   width: 100%;
   height: 50px;
   padding: 0 10px;
   margin: 2px 0;
-  border-radius: ${(props) => (props.centralized ? "6px" : "0px")};
+  border-radius: ${(props) => (props["data-centralized"] ? "6px" : "0px")};
   &:hover {
     background-color: #f5f5fa;
   }
@@ -91,10 +91,8 @@ const Button = styled.button`
   }
 `;
 
-const Workbench = ({ children }) => {
+const Workbench = ({ children, title, page }) => {
   const navigate = useNavigate();
-  const [title, setTitle] = useState("Inicio");
-  const [lastButtonPressed, setLastButtonPressed] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isTitleOpen, setIsTitleOpen] = useState(true);
   const [showButtonText, setShowButtonText] = useState(false);
@@ -108,10 +106,8 @@ const Workbench = ({ children }) => {
     }
   }, [disableMenu]);
 
-  const handleButtonClick = (route, title, buttonPressed) => {
-    setLastButtonPressed(buttonPressed);
+  const handleButtonClick = (route) => {
     navigate(route);
-    setTitle(title);
   };
 
   const handleMenuClick = () => {
@@ -127,72 +123,43 @@ const Workbench = ({ children }) => {
     }
   };
 
-
   return (
     <Section>
       <Profile />
       <UpDownArrowBtn onClick={() => setIsTitleOpen(!isTitleOpen)} />
-      <Menu show={isMenuOpen}>
+      <Menu data-show={isMenuOpen}>
         <LogoImg src={Logo} />
 
-        <Button centralized={isMenuOpen} lastPressed={lastButtonPressed === "0"} onClick={() => handleButtonClick("/home", "Inicio", "0")}>
+        <Button data-centralized={isMenuOpen} data-last-pressed={page === "0"} onClick={() => handleButtonClick("/home")}>
           <HomeIcon /> {showButtonText && <p>Inicio</p>}
         </Button>
-        <Button
-          centralized={isMenuOpen}
-          lastPressed={lastButtonPressed === "1"}
-          onClick={() => handleButtonClick("/quebrar-arquivo", "Quebrar arquivo", "1")}
-        >
+        <Button data-centralized={isMenuOpen} data-last-pressed={page === "1"} onClick={() => handleButtonClick("/quebrar-arquivo")}>
           <InsertPageBreakIcon /> {showButtonText && <p>Quebrar arquivo</p>}
         </Button>
-        <Button
-          centralized={isMenuOpen}
-          lastPressed={lastButtonPressed === "2"}
-          onClick={() => handleButtonClick("/extrato-bancario", "Lançamento Extrato Bancário", "2")}
-        >
+        <Button data-centralized={isMenuOpen} data-last-pressed={page === "2"} onClick={() => handleButtonClick("/extrato-bancario")}>
           <PlagiarismIcon /> {showButtonText && <p>Lançamento de Extrato</p>}
         </Button>
-        <Button
-          centralized={isMenuOpen}
-          lastPressed={lastButtonPressed === "3"}
-          onClick={() => handleButtonClick("/atualizar-usuario", "Atualizar Cadastro Usuário", "3")}
-        >
+        <Button data-centralized={isMenuOpen} data-last-pressed={page === "3"} onClick={() => handleButtonClick("/atualizar-usuario")}>
           <ManageAccountsIcon /> {showButtonText && <p>Atualizar Cadastro</p>}
         </Button>
-        <Button
-          centralized={isMenuOpen}
-          lastPressed={lastButtonPressed === "4"}
-          onClick={() => handleButtonClick("/cadastro-clientes", "Cadastro Clientes", "4")}
-        >
+        <Button data-centralized={isMenuOpen} data-last-pressed={page === "4"} onClick={() => handleButtonClick("/cadastro-clientes")}>
           <PersonAddIcon /> {showButtonText && <p>Cadastro Clientes</p>}
         </Button>
-        <Button
-          centralized={isMenuOpen}
-          lastPressed={lastButtonPressed === "5"}
-          onClick={() => handleButtonClick("/cadastro-conta-contabil", "Cadastro Conta Contábil", "5")}
-        >
+        <Button data-centralized={isMenuOpen} data-last-pressed={page === "5"} onClick={() => handleButtonClick("/cadastro-conta-contabil")}>
           <AssignmentIndIcon /> {showButtonText && <p>Cadastro Conta Contábil</p>}
         </Button>
-        <Button
-          centralized={isMenuOpen}
-          lastPressed={lastButtonPressed === "6"}
-          onClick={() => handleButtonClick("/cadastro-plano-contas", "Cadastro Plano de Contas Geral", "6")}
-        >
+        <Button data-centralized={isMenuOpen} data-last-pressed={page === "6"} onClick={() => handleButtonClick("/cadastro-plano-contas")}>
           <ZoomOutMapIcon /> {showButtonText && <p>Plano de Contas Geral</p>}
         </Button>
-        <Button
-          centralized={isMenuOpen}
-          lastPressed={lastButtonPressed === "7"}
-          onClick={() => handleButtonClick("/cadastro-depara-historico", "Cadastro Depara Histórico", "7")}
-        >
+        <Button data-centralized={isMenuOpen} data-last-pressed={page === "7"} onClick={() => handleButtonClick("/cadastro-depara-historico")}>
           <AssignmentIcon /> {showButtonText && <p>Depara Histórico</p>}
         </Button>
-        <Button centralized={isMenuOpen} disabled={disableMenu} onClick={handleMenuClick}>
+        <Button data-centralized={isMenuOpen} disabled={disableMenu} onClick={handleMenuClick}>
           {isMenuOpen ? <MenuOpenIcon /> : <MenuIcon />} {showButtonText && <p>Menu ON/OFF</p>}
         </Button>
       </Menu>
       <Content>
-        <Title show={isTitleOpen}>
+        <Title data-show={isTitleOpen}>
           <h1>{title}</h1>
         </Title>
         {children}
