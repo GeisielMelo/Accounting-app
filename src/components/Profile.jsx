@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
@@ -90,19 +90,26 @@ const Option = styled.p`
 
 const Profile = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef();
 
   useEffect(() => {
-    if (menuOpen) {
-      setTimeout(() => {
+    const handleClickOutside = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
         setMenuOpen(false);
-      }, 5000);
-    }
-  }, [menuOpen]);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
       <User>
-        <Button disabled={menuOpen} data-shadow={menuOpen} onClick={(e) => setMenuOpen(!menuOpen)}>
+        <Button data-shadow={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
           <Image>
             <AccountCircleIcon fontSize="large" />
           </Image>
@@ -110,7 +117,7 @@ const Profile = () => {
       </User>
 
       {menuOpen && (
-        <Menu>
+        <Menu ref={menuRef}>
           <Name>David Contabil</Name>
           <Email>david@tarssolucoes.com.br</Email>
           <Line />
