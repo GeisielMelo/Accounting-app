@@ -1,7 +1,8 @@
 import React from "react";
+import { TableCadastroPlanoContas } from "../../components/tables/TableCadastroPlanoContas";
 
 const CadastroPlanoContas = () => {
-  return <p>CadastroPlanoContas</p>;
+  return <TableCadastroPlanoContas />;
 };
 
 export default CadastroPlanoContas;

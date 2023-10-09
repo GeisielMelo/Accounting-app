@@ -1,7 +1,8 @@
 import React from "react";
+import { TableCadastroContaContabil } from "../../components/tables/TableCadastroContaContabil";
 
 const CadastroContaContabil = () => {
-  return <p>CadastroContaContabil</p>;
+  return <TableCadastroContaContabil />;
 };
 
 export default CadastroContaContabil;
