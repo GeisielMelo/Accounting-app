@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import SearchIcon from "@mui/icons-material/Search";
+import DescriptionIcon from "@mui/icons-material/Description";
 
 const Input = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ const Input = styled.div`
   height: 30px;
   background-color: #f5f5fa;
   border-radius: 6px;
-  &:focus-within{
+  &:focus-within {
     border: 2px solid #6453e4;
   }
 
@@ -18,20 +18,25 @@ const Input = styled.div`
     align-items: center;
     margin: 0 10px;
   }
-  input {
+  select {
     background: none;
     height: 100%;
     width: 100%;
   }
 `;
 
-export const GlobalFilter = ({ filter, setFilter }) => {
+export const ArchiveSelection = () => {
   return (
     <Input>
       <span>
-        <SearchIcon />
+        <DescriptionIcon />
       </span>
-      <input type="text" value={filter || ""} onChange={(e) => setFilter(e.target.value)} placeholder="Pesquisar..." />
+      <select>
+        <option>Selecione</option>
+        <option>Exemplo</option>
+        <option>Exemplo</option>
+        <option>Exemplo</option>
+      </select>
     </Input>
   );
 };
