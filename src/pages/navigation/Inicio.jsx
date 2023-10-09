@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import ScreenRotationIcon from "@mui/icons-material/ScreenRotation";
 import React from "react";
 
 const Wrapper = styled.div`
@@ -29,6 +30,9 @@ const Inicio = () => {
       <Container>
         <Title>Sistema Tars</Title>
         <Subtitle>Bem vindo ao sistema de gerenciamento de tars</Subtitle>
+        <Subtitle>
+          Para melhor experiencia em dispositivos moveis como Tablets ou Celulares utilize o modo Rotação automática {<ScreenRotationIcon />}
+        </Subtitle>
       </Container>
     </Wrapper>
   );
