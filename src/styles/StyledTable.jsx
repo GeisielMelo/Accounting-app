@@ -37,4 +37,5 @@ export const TableNav = styled.div`
   width: 100%;
   padding: 10px 0;
   gap: 10px;
+  flex-wrap: wrap;
 `;
