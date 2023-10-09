@@ -22,6 +22,11 @@ const Section = styled.section`
   height: 100vh;
 `;
 
+const ChildrenBox = styled.div`
+  padding: 5px;
+  margin-top: 10px;
+`;
+
 const Menu = styled.div`
   display: flex;
   flex-direction: column;
@@ -125,7 +130,6 @@ const Workbench = ({ children, title, page }) => {
 
   return (
     <Section>
-      <Profile />
       <UpDownArrowBtn onClick={() => setIsTitleOpen(!isTitleOpen)} />
       <Menu data-show={isMenuOpen}>
         <LogoImg src={Logo} />
@@ -161,8 +165,11 @@ const Workbench = ({ children, title, page }) => {
       <Content>
         <Title data-show={isTitleOpen}>
           <h1>{title}</h1>
+          <Profile />
         </Title>
+        <ChildrenBox>
         {children}
+        </ChildrenBox>
       </Content>
     </Section>
   );
