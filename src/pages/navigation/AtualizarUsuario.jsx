@@ -38,7 +38,6 @@ const Container = styled.div`
       background-color: #f1f1f2;
       padding: 0 10px;
       font-family: ${(props) => props.theme.font.family.two};
-
     }
   }
 
@@ -63,9 +62,9 @@ const AtualizarUsuario = () => {
   const [name, setName] = useState(null);
   const [lastName, setLastName] = useState(null);
   const [email, setEmail] = useState(null);
-  const [actualPassword, setActualPassword] = useState(null);
-  const [password, setPassword] = useState(null);
-  const [repeatPassword, setRepeatPassword] = useState(null);
+  const [actualPassword, setActualPassword] = useState("");
+  const [password, setPassword] = useState("");
+  const [repeatPassword, setRepeatPassword] = useState("");
 
   useEffect(() => {
     if (name === null) setName(testVariables.name);
