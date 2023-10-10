@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import Logo from "../../assets/img/logo.png";
 import Profile from "../../components/Profile";
-import UpDownArrowBtn from "../../components/UpDownArrowBtn";
 
+import UpDownArrowBtn from "../../components/UpDownArrowBtn";
 import HomeIcon from "@mui/icons-material/Home";
 import InsertPageBreakIcon from "@mui/icons-material/InsertPageBreak";
 import PlagiarismIcon from "@mui/icons-material/Plagiarism";
@@ -13,7 +13,6 @@ import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
 import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import ZoomOutMapIcon from "@mui/icons-material/ZoomOutMap";
-
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import MenuIcon from "@mui/icons-material/Menu";
 
@@ -56,6 +55,9 @@ const Title = styled.div`
   font-family: ${(props) => props.theme.font.family.one};
   h1 {
     font-size: 24px;
+    @media (max-width: 630px) {
+      font-size: 16px;
+  }
   }
 `;
 
