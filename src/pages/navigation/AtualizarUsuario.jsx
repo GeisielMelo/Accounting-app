@@ -5,9 +5,9 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 600px;
-  box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  margin: 20px auto;
+  margin: 20px auto; */
   @media (max-width: 630px) {
     align-items: center;
   }
@@ -36,6 +36,8 @@ const Container = styled.div`
       width: 100%;
       height: 40px;
       background-color: #f1f1f2;
+      border: 1px solid rgba(212, 213, 216, 255);
+      border-radius: 6px;
       padding: 0 10px;
       font-family: ${(props) => props.theme.font.family.two};
       &:disabled {
