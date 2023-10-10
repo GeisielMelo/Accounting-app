@@ -3,7 +3,9 @@ import styled from "styled-components";
 export const TableContainer = styled.div`
   overflow-x: auto;
   table {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: ${(props) => props.theme.font.family.one};
+    font-size: ${(props) => props.theme.font.size.sm};
+    border-spacing: 0;
     border-collapse: collapse;
     width: 100%;
   }
