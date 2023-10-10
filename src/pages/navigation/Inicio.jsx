@@ -28,8 +28,8 @@ const Inicio = () => {
   return (
     <Wrapper>
       <Container>
-        <Title>Sistema Tars</Title>
-        <Subtitle>Bem vindo ao sistema de gerenciamento de tars</Subtitle>
+        <Title>Sistema</Title>
+        <Subtitle>Bem vindo ao sistema de gerenciamento</Subtitle>
         <Subtitle>
           Para melhor experiencia em dispositivos moveis como Tablets ou Celulares utilize o modo Rotação automática {<ScreenRotationIcon />}
         </Subtitle>
