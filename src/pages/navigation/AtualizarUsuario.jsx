@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 700px;
+  max-width: 600px;
   box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
   margin: 20px auto;
@@ -38,6 +38,9 @@ const Container = styled.div`
       background-color: #f1f1f2;
       padding: 0 10px;
       font-family: ${(props) => props.theme.font.family.two};
+      &:disabled {
+        cursor: not-allowed;
+      }
     }
   }
 
@@ -106,12 +109,18 @@ const AtualizarUsuario = () => {
 
       <span>
         <h1>Nova Senha</h1>
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <input type="password" placeholder="Opcional" value={password} onChange={(e) => setPassword(e.target.value)} />
       </span>
 
       <span>
         <h1>Repetir nova Senha</h1>
-        <input type="password" value={repeatPassword} onChange={(e) => setRepeatPassword(e.target.value)} />
+        <input
+          type="password"
+          placeholder="Opcional"
+          value={repeatPassword}
+          disabled={repeatPassword === ""}
+          onChange={(e) => setRepeatPassword(e.target.value)}
+        />
       </span>
 
       <div>
