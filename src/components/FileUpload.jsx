@@ -5,9 +5,9 @@ import DriveFolderUploadIcon from "@mui/icons-material/DriveFolderUpload";
 const Input = styled.div`
   display: flex;
   align-items: center;
-  max-width: 300px;
+  max-width: 600px;
   width: 100%;
-  height: 30px;
+  height: 35px;
   background-color: #f5f5fa;
   border-radius: 6px;
   cursor: pointer;
