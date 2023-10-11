@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Index from "./pages/main/Index";
 import Login from "./pages/main/Login";
+import RecoverPassword from "./pages/main/RecoverPassword";
 import Register from "./pages/main/Register";
 import Workbench from "./pages/main/Workbench";
 
@@ -19,8 +20,9 @@ const AppRoutes = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/sign-in" element={<Login />} />
-        <Route path="/sign-up" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/cadastro" element={<Register />} />
+        <Route path="/login/recuperar-senha" element={<RecoverPassword />} />
         <Route path="/" element={<Index />} />
         <Route path="*" element={<Login />} />
 
