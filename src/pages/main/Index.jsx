@@ -1,6 +1,7 @@
+import React, { useState, useEffect } from "react";
 import { styled } from "styled-components";
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import Nav from "../../components/index/Nav";
+import Hero from "../../components/index/Hero";
 
 const Section = styled.section`
   display: flex;
@@ -8,35 +9,39 @@ const Section = styled.section`
   align-items: center;
   justify-content: center;
   height: 100vh;
-  h1 {
-    font-family: ${(props) => props.theme.font.family.one};
-    margin: 10px 0;
-  }
-  button {
-    margin: 10px 0;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #000;
-    font-family: ${(props) => props.theme.font.family.one};
-    transition: 0.2s;
-    &:hover {
-      box-shadow: 0 0 5px #220fef;
-      font-weight: bold;
-    }
+  @media (max-width: 768px) {
+    height: auto;
   }
 `;
 
 const Index = () => {
-  const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 769);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
-    <Section>
-      <h1>Tars serviços dev build</h1>
-      <button onClick={() => navigate("/home")}>Area de clientes</button>
-      <button onClick={() => navigate("/sign-in")}>Entrar</button>
-      <button onClick={() => navigate("/sign-up")}>Registrar</button>
-    </Section>
+    <>
+      <Nav isAuthenticated={isLoggedIn} isMobile={isMobile} />
+
+      <Section>
+        <Hero />
+      </Section>
+
+      <Section>
+        <h1>Tars serviços dev build</h1>
+      </Section>
+    </>
   );
 };
 
