@@ -20,7 +20,7 @@ export const theme = {
       bg: "32px",
       md: "24px",
       sm: "14px",
-      es: "10px",
+      es: "12px",
     },
     weight: {
       light: 300,
