@@ -27,9 +27,13 @@ const Container = styled.div`
   padding: 0 20px;
 `;
 
-const Logo = styled.img`
+const Logo = styled.div`
   width: 50px;
   height: 50px;
+  img {
+    width: 50px;
+  height: 50px;
+  }
 `;
 
 const Navigation = styled.div`
@@ -131,11 +135,11 @@ const Nav = ({ isAuthenticated, isMobile }) => {
     if (isMobileMenuOpen) {
       setIsMobileMenuOpen(false);
     }
-    
+
     const targetElement = document.getElementById(id);
     if (targetElement) {
       window.scrollTo({
-        top: targetElement.offsetTop - 80, 
+        top: targetElement.offsetTop - 80,
         behavior: "smooth",
       });
     }
@@ -144,7 +148,9 @@ const Nav = ({ isAuthenticated, isMobile }) => {
   return (
     <Wrapper>
       <Container>
-        <Logo src={logo} alt="logo" />
+        <Logo>
+          <img src={logo} alt="logo" />
+        </Logo>
         {!isMobile ? (
           <>
             <Navigation>
@@ -155,12 +161,14 @@ const Nav = ({ isAuthenticated, isMobile }) => {
                 <a href="#">Pricing</a>
                 <a href="#">Newsletter</a>
               </span>
-              <a onClick={() => handleInternalLinkClick("footer")  } href="#">Contact</a>
+              <a onClick={() => handleInternalLinkClick("footer")} href="#">
+                Contact
+              </a>
             </Navigation>
             <Buttons>
               {isAuthenticated ? (
                 <>
-                  <button onClick={() => navigate("/home")}>Área de Clientes</button>
+                  <button className="right" onClick={() => navigate("/home")}>Área de Clientes</button>
                 </>
               ) : (
                 <>

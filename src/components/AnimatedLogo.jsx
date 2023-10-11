@@ -30,18 +30,25 @@ const Container = styled.div`
   height: 100px;
 `;
 
-const Image = styled.img`
+const Image = styled.div`
   width: 50px;
   height: 50px;
-  padding: 5px;
   margin: 40px;
+
+  img {
+    width: 50px;
+    height: 50px;
+    padding: 4px;
+  }
 `;
 
 export const AnimatedLogo = () => {
   return (
     <Container>
       <RotatingDiv />
-      <Image src={logo} alt="logo" />
+      <Image>
+        <img src={logo} alt="logo" />
+      </Image>
     </Container>
   );
 };

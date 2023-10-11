@@ -4,6 +4,7 @@ import Hero from "../../components/index/Hero";
 import Footer from "../../components/index/Footer";
 import { Wrapper } from "../../components/Wrapper";
 import { Loading } from "../../components/Loading";
+import { DeveloperMode } from "../../components/DeveloperMode";
 
 const Index = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -36,6 +37,7 @@ const Index = () => {
         <Loading />
       ) : (
         <>
+          <DeveloperMode onChange={() => setIsLoggedIn(!isLoggedIn)} value={isLoggedIn} />
           <Nav isAuthenticated={isLoggedIn} isMobile={isMobile} />
           <Hero />
           <Footer />

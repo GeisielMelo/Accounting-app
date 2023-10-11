@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { useNavigate } from "react-router-dom"; // Remover essa import quando adicionar o AuthContext
 
 const User = styled.div`
   position: absolute;
@@ -91,6 +92,7 @@ const Option = styled.p`
 const Profile = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef();
+  const navigate = useNavigate(); // Remover essa import quando adicionar o AuthContext
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -121,7 +123,7 @@ const Profile = () => {
           <Name>David Contabil</Name>
           <Email>david@tarssolucoes.com.br</Email>
           <Line />
-          <Option>Logout</Option>
+          <Option onClick={() => navigate("/")}>Logout</Option>
         </Menu>
       )}
     </>
