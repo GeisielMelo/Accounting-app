@@ -60,21 +60,22 @@ const Hero = () => {
     <Section id="hero">
       <Container>
         <Title>
-          <h1>Connect everything.</h1>
+          <h1>Conecte tudo.</h1>
           <AnimatedLogo />
-          <h1>Build anything.</h1>
+          <h1>Organize tudo.</h1>
         </Title>
 
         <Description>
-          App is the modern web development platform for Enterprises to realize the full potential of a scalable, customizable web architecture.
+          O App é a plataforma moderna de desenvolvimento web para Empresas realizarem todo o potencial de uma arquitetura web escalável e
+          personalizável.
         </Description>
 
         <Buttons>
-          <button className="left" onClick={() => alert("Download Now")}>
+          <button className="left" onClick={() => alert("Saiba mais")}>
             Saiba mais
           </button>
-          <button className="right" onClick={() => alert("Demo Requested")}>
-            Request Demo
+          <button className="right" onClick={() => alert("Solicitar Demonstração")}>
+            Solicitar Demo
           </button>
         </Buttons>
       </Container>
