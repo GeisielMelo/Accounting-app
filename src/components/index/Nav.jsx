@@ -47,6 +47,9 @@ const Navigation = styled.div`
     justify-content: center;
     width: 100px;
     height: 40px;
+    text-decoration: none;
+    color: black;
+    font-family: ${(props) => props.theme.font.family.one};
   }
 `;
 
@@ -59,20 +62,84 @@ const Buttons = styled.div`
     padding: 0 10px;
     cursor: pointer;
     border-radius: 5px;
-    box-shadow: 0 0 5px #000;
+    border: 1px solid black;
     font-family: ${(props) => props.theme.font.family.one};
     transition: 0.2s;
-    &:hover {
-      box-shadow: 0 0 5px #220fef;
-      font-weight: bold;
-    }
+  }
+  .left {
+    background: transparent;
+    border-color: black;
+  }
+  .right {
+    background: black;
+    color: white;
+    border: black;
+  }
+`;
+
+const MobileMenu = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+
+  button {
+    height: 40px;
+    width: max-content;
+    padding: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-family: ${(props) => props.theme.font.family.one};
+    transition: 0.2s;
+  }
+  .left {
+    background: transparent;
+    border-color: black;
+  }
+  .right {
+    background: black;
+    color: white;
+    border: black;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 40px;
+    text-decoration: none;
+    color: black;
+    font-family: ${(props) => props.theme.font.family.one};
   }
 `;
 
 const Nav = ({ isAuthenticated, isMobile }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   const navigate = useNavigate();
+
+  const handleInternalLinkClick = (id) => {
+    if (isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+    
+    const targetElement = document.getElementById(id);
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - 80, 
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <Wrapper>
@@ -82,11 +149,13 @@ const Nav = ({ isAuthenticated, isMobile }) => {
           <>
             <Navigation>
               <span>
-                <a href="#">Home</a>
+                <a onClick={() => handleInternalLinkClick("home")} href="#">
+                  Home
+                </a>
                 <a href="#">Pricing</a>
                 <a href="#">Newsletter</a>
               </span>
-              <a href="#">Contact</a>
+              <a onClick={() => handleInternalLinkClick("footer")  } href="#">Contact</a>
             </Navigation>
             <Buttons>
               {isAuthenticated ? (
@@ -95,16 +164,42 @@ const Nav = ({ isAuthenticated, isMobile }) => {
                 </>
               ) : (
                 <>
-                  <button onClick={() => navigate("/sign-in")}>Entrar</button>
-                  <button onClick={() => navigate("/sign-up")}>Registrar</button>
+                  <button className="left" onClick={() => navigate("/sign-in")}>
+                    Entrar
+                  </button>
+                  <button className="right" onClick={() => navigate("/sign-up")}>
+                    Registrar
+                  </button>
                 </>
               )}
             </Buttons>
           </>
         ) : (
           <>
-          
-            {isMobileMenuOpen ? <MenuOpenIcon onClick={() => setIsMobileMenuOpen(false)} /> : <MenuIcon onClick={() => setIsMobileMenuOpen(true)} />}
+            <MenuIcon onClick={() => setIsMobileMenuOpen(true)} />
+            {isMobileMenuOpen && (
+              <MobileMenu>
+                <a onClick={() => handleInternalLinkClick("home")} href="#">
+                  Home
+                </a>
+                <a href="#">Pricing</a>
+                <a href="#">Newsletter</a>
+                <a onClick={() => handleInternalLinkClick("footer")}>Contact</a>
+                {isAuthenticated ? (
+                  <button onClick={() => navigate("/home")}>Área de Clientes</button>
+                ) : (
+                  <>
+                    <button className="left" onClick={() => navigate("/sign-in")}>
+                      Entrar
+                    </button>
+                    <button className="right" onClick={() => navigate("/sign-up")}>
+                      Registrar
+                    </button>
+                  </>
+                )}
+                <MenuOpenIcon onClick={() => setIsMobileMenuOpen(false)} />
+              </MobileMenu>
+            )}
           </>
         )}
       </Container>
