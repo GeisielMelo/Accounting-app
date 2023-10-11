@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { AnimatedLogo } from "../AnimatedLogo";
 
 const Section = styled.section`
   display: flex;
@@ -19,7 +20,7 @@ const Title = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  font-size: 28px;
+  font-size: clamp(16px, 5vw, 28px);
   font-family: ${(props) => props.theme.font.family.one};
 `;
 
@@ -54,20 +55,13 @@ const Buttons = styled.div`
   }
 `;
 
-const Animation = styled.div`
-  width: 50px;
-  height: 50px;
-  margin: 40px;
-  background-color: red;
-`;
-
 const Hero = () => {
   return (
     <Section id="hero">
       <Container>
         <Title>
           <h1>Connect everything.</h1>
-          <Animation />
+          <AnimatedLogo />
           <h1>Build anything.</h1>
         </Title>
 
