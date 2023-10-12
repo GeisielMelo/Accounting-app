@@ -174,10 +174,10 @@ const Nav = ({ isAuthenticated, isMobile }) => {
                 </>
               ) : (
                 <>
-                  <button className="left" onClick={() => navigate("/sign-in")}>
+                  <button className="left" onClick={() => navigate("/login")}>
                     Entrar
                   </button>
-                  <button className="right" onClick={() => navigate("/sign-up")}>
+                  <button className="right" onClick={() => navigate("/cadastro")}>
                     Registrar
                   </button>
                 </>
@@ -199,10 +199,10 @@ const Nav = ({ isAuthenticated, isMobile }) => {
                   <button onClick={() => navigate("/home")}>Área de Clientes</button>
                 ) : (
                   <>
-                    <button className="left" onClick={() => navigate("/sign-in")}>
+                    <button className="left" onClick={() => navigate("/login")}>
                       Entrar
                     </button>
-                    <button className="right" onClick={() => navigate("/sign-up")}>
+                    <button className="right" onClick={() => navigate("/cadastro")}>
                       Registrar
                     </button>
                   </>
