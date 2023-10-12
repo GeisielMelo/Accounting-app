@@ -21,7 +21,14 @@ const Title = styled.h1`
 `;
 
 const Subtitle = styled.p`
+  font-family: ${(props) => props.theme.font.family.two};
+  font-size: ${(props) => props.theme.font.size.sm};
+  font-weight: ${(props) => props.theme.font.weight.bold};
   margin: 30px 0;
+  max-width: 300px;
+  span {
+    color: red;
+  }
 `;
 
 const Inicio = () => {
@@ -31,8 +38,11 @@ const Inicio = () => {
         <Title>Sistema</Title>
         <Subtitle>Bem vindo ao sistema de gerenciamento</Subtitle>
         <Subtitle>
-          Para melhor experiencia em dispositivos moveis como Tablets ou Celulares utilize o modo Rotação automática {<ScreenRotationIcon />}
+          Para uma experiência otimizada em dispositivos móveis, como tablets e celulares, é aconselhável habilitar o modo de rotação automática.
+          <br />
+          {<ScreenRotationIcon />}
         </Subtitle>
+        <Subtitle><span>Importante</span>: As informações contidas nas tabelas são fictícias e foram geradas exclusivamente para fins de teste.</Subtitle>
       </Container>
     </Wrapper>
   );

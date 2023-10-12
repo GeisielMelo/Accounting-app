@@ -17,14 +17,15 @@ body  {
 // Custom scroll bar
 ::-webkit-scrollbar {
     width: 5px;
+    height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: ${(props) => props.theme.color.White.default};
+    background: #fff;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color:  ${(props) => props.theme.color.Silver.default};
+    background: linear-gradient(135deg, #393E46, #222831);
     border-radius: 4px;
 } 
 `;

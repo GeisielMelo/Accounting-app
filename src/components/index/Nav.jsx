@@ -32,7 +32,7 @@ const Logo = styled.div`
   height: 50px;
   img {
     width: 50px;
-  height: 50px;
+    height: 50px;
   }
 `;
 
@@ -156,19 +156,21 @@ const Nav = ({ isAuthenticated, isMobile }) => {
             <Navigation>
               <span>
                 <a onClick={() => handleInternalLinkClick("home")} href="#">
-                  Home
+                  Início
                 </a>
-                <a href="#">Pricing</a>
-                <a href="#">Newsletter</a>
+                <a href="#">Planos</a>
+                <a href="#">Notícias</a>
               </span>
               <a onClick={() => handleInternalLinkClick("footer")} href="#">
-                Contact
+                Contato
               </a>
             </Navigation>
             <Buttons>
               {isAuthenticated ? (
                 <>
-                  <button className="right" onClick={() => navigate("/home")}>Área de Clientes</button>
+                  <button className="right" onClick={() => navigate("/home")}>
+                    Área de Clientes
+                  </button>
                 </>
               ) : (
                 <>
@@ -188,11 +190,11 @@ const Nav = ({ isAuthenticated, isMobile }) => {
             {isMobileMenuOpen && (
               <MobileMenu>
                 <a onClick={() => handleInternalLinkClick("home")} href="#">
-                  Home
+                  Início
                 </a>
-                <a href="#">Pricing</a>
-                <a href="#">Newsletter</a>
-                <a onClick={() => handleInternalLinkClick("footer")}>Contact</a>
+                <a href="#">Planos</a>
+                <a href="#">Notícias</a>
+                <a onClick={() => handleInternalLinkClick("footer")}>Contato</a>
                 {isAuthenticated ? (
                   <button onClick={() => navigate("/home")}>Área de Clientes</button>
                 ) : (
