@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import DescriptionIcon from "@mui/icons-material/Description";
 
@@ -32,10 +31,10 @@ export const ArchiveSelection = () => {
         <DescriptionIcon />
       </span>
       <select>
-        <option>Selecione</option>
-        <option>Exemplo</option>
-        <option>Exemplo</option>
-        <option>Exemplo</option>
+        <option>Select</option>
+        <option>Example</option>
+        <option>Example</option>
+        <option>Example</option>
       </select>
     </Input>
   );

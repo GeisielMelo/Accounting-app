@@ -72,7 +72,7 @@ export const FileUpload = ({ setJsonArray }) => {
     <Input onClick={() => fileRef.current.click()}>
       <span>
         <p><DriveFolderUploadIcon /></p>
-        <p>{file ? file.name : "Selecione um arquivo."}</p>
+        <p>{file ? file.name : "Select a Document"}</p>
       </span>
       <input type="file" ref={fileRef} onChange={handleChange} accept=".json" style={{ display: "none" }} />
     </Input>

@@ -156,29 +156,29 @@ const Nav = ({ isAuthenticated, isMobile }) => {
             <Navigation>
               <span>
                 <a onClick={() => handleInternalLinkClick("home")} href="#">
-                  Início
+                  Home
                 </a>
-                <a href="#">Planos</a>
-                <a href="#">Notícias</a>
+                <a href="#">Pricing</a>
+                <a href="#">News</a>
               </span>
               <a onClick={() => handleInternalLinkClick("footer")} href="#">
-                Contato
+                Contact
               </a>
             </Navigation>
             <Buttons>
               {isAuthenticated ? (
                 <>
                   <button className="right" onClick={() => navigate("/home")}>
-                    Área de Clientes
+                    Client Area
                   </button>
                 </>
               ) : (
                 <>
                   <button className="left" onClick={() => navigate("/login")}>
-                    Entrar
+                    Sign In
                   </button>
                   <button className="right" onClick={() => navigate("/cadastro")}>
-                    Registrar
+                    Sign Up
                   </button>
                 </>
               )}
@@ -190,20 +190,20 @@ const Nav = ({ isAuthenticated, isMobile }) => {
             {isMobileMenuOpen && (
               <MobileMenu>
                 <a onClick={() => handleInternalLinkClick("home")} href="#">
-                  Início
+                  Home
                 </a>
-                <a href="#">Planos</a>
-                <a href="#">Notícias</a>
-                <a onClick={() => handleInternalLinkClick("footer")}>Contato</a>
+                <a href="#">Pricing</a>
+                <a href="#">News</a>
+                <a onClick={() => handleInternalLinkClick("footer")}>Contact</a>
                 {isAuthenticated ? (
-                  <button onClick={() => navigate("/home")}>Área de Clientes</button>
+                  <button onClick={() => navigate("/home")}>Client Area</button>
                 ) : (
                   <>
                     <button className="left" onClick={() => navigate("/login")}>
-                      Entrar
+                      Sign In
                     </button>
                     <button className="right" onClick={() => navigate("/cadastro")}>
-                      Registrar
+                      Sign Up
                     </button>
                   </>
                 )}

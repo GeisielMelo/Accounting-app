@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -62,30 +62,21 @@ const Container = styled.div`
 `;
 
 const AtualizarUsuario = () => {
-  const testVariables = { name: "David", lastName: "Contabil", email: "david@tarssolucoes.com.br", status: true, group: "Contabil" };
-
   const [name, setName] = useState(null);
   const [lastName, setLastName] = useState(null);
   const [email, setEmail] = useState(null);
-  const [actualPassword, setActualPassword] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
-
-  useEffect(() => {
-    if (name === null) setName(testVariables.name);
-    if (lastName === null) setLastName(testVariables.lastName);
-    if (email === null) setEmail(testVariables.email);
-  });
 
   return (
     <Container>
       <span>
-        <h1>Nome</h1>
+        <h1>Name</h1>
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
       </span>
 
       <span>
-        <h1>Sobrenome</h1>
+        <h1>Last name</h1>
         <input type="text" value={lastName} onChange={(e) => setLastName(e.target.value)} />
       </span>
 
@@ -105,20 +96,15 @@ const AtualizarUsuario = () => {
       </span> */}
 
       <span>
-        <h1>Senha Atual</h1>
-        <input type="password" value={actualPassword} onChange={(e) => setActualPassword(e.target.value)} />
-      </span>
-
-      <span>
-        <h1>Nova Senha</h1>
+        <h1>New Password</h1>
         <input type="password" placeholder="Opcional" value={password} onChange={(e) => setPassword(e.target.value)} />
       </span>
 
       <span>
-        <h1>Repetir nova Senha</h1>
+        <h1>Confirm Password</h1>
         <input
           type="password"
-          placeholder="Opcional"
+          placeholder="Optional"
           value={repeatPassword}
           disabled={repeatPassword === ""}
           onChange={(e) => setRepeatPassword(e.target.value)}
@@ -126,8 +112,8 @@ const AtualizarUsuario = () => {
       </span>
 
       <div>
-        <button>Cancelar</button>
-        <button style={{ backgroundColor: "#1abc9c", color: "#fff" }}>Salvar</button>
+        <button>Cancel</button>
+        <button style={{ backgroundColor: "#1abc9c", color: "#fff" }}>Submit</button>
       </div>
     </Container>
   );

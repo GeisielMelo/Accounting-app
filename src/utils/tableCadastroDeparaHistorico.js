@@ -1,22 +1,22 @@
 export const COLUMNS = [
   {
-    Header: "Codigo",
+    Header: "Code",
     accessor: "codigo",
   },
   {
-    Header: "Cliente",
+    Header: "Client",
     accessor: "cliente",
   },
   {
-    Header: "Descrição",
+    Header: "Description",
     accessor: "descricao",
   },
   {
-    Header: "Conta",
+    Header: "Account",
     accessor: "conta",
   },
   {
-    Header: "Tipo Depara",
+    Header: "Mapping Type",
     accessor: "tipo_depara",
   },
 ];

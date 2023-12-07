@@ -120,8 +120,8 @@ const Profile = () => {
 
       {menuOpen && (
         <Menu ref={menuRef}>
-          <Name>David Contabil</Name>
-          <Email>david@tarssolucoes.com.br</Email>
+          <Name>Username</Name>
+          <Email>email@email.com</Email>
           <Line />
           <Option onClick={() => navigate("/")}>Logout</Option>
         </Menu>

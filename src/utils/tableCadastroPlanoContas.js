@@ -1,26 +1,26 @@
 export const COLUMNS = [
   {
-    Header: "Plano",
+    Header: "Plan",
     accessor: "plano",
   },
   {
-    Header: "Descrição",
+    Header: "Description",
     accessor: "descricao",
   },
   {
-    Header: "Classificação",
+    Header: "Classification",
     accessor: "classificacao",
   },
   {
-    Header: "Desc Classificação",
+    Header: "Classification Description",
     accessor: "desc_classificacao",
   },
   {
-    Header: "Conta Contábil",
+    Header: "Accounting Account",
     accessor: "conta_contabil",
   },
   {
-    Header: "Conta Pai",
+    Header: "Parent Account",
     accessor: "conta_pai",
   },
 ];

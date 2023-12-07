@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import Logo from "../../assets/img/logo.png";
@@ -137,28 +137,28 @@ const Workbench = ({ children, title, page }) => {
         <LogoImg src={Logo} />
 
         <Button data-centralized={isMenuOpen} data-last-pressed={page === "0"} onClick={() => handleButtonClick("/home")}>
-          <HomeIcon /> {showButtonText && <p>Inicio</p>}
+          <HomeIcon /> {showButtonText && <p>Home</p>}
         </Button>
-        <Button data-centralized={isMenuOpen} data-last-pressed={page === "1"} onClick={() => handleButtonClick("/quebrar-arquivo")}>
-          <InsertPageBreakIcon /> {showButtonText && <p>Quebrar arquivo</p>}
+        <Button data-centralized={isMenuOpen} data-last-pressed={page === "1"} onClick={() => handleButtonClick("/split-file")}>
+          <InsertPageBreakIcon /> {showButtonText && <p>Split file</p>}
         </Button>
-        <Button data-centralized={isMenuOpen} data-last-pressed={page === "2"} onClick={() => handleButtonClick("/extrato-bancario")}>
-          <PlagiarismIcon /> {showButtonText && <p>Lançamento de Extrato</p>}
+        <Button data-centralized={isMenuOpen} data-last-pressed={page === "2"} onClick={() => handleButtonClick("/transaction-entry")}>
+          <PlagiarismIcon /> {showButtonText && <p>Transaction Entry</p>}
         </Button>
-        <Button data-centralized={isMenuOpen} data-last-pressed={page === "3"} onClick={() => handleButtonClick("/atualizar-usuario")}>
-          <ManageAccountsIcon /> {showButtonText && <p>Atualizar Cadastro</p>}
+        <Button data-centralized={isMenuOpen} data-last-pressed={page === "3"} onClick={() => handleButtonClick("/profile-update")}>
+          <ManageAccountsIcon /> {showButtonText && <p>Update Profile</p>}
         </Button>
-        <Button data-centralized={isMenuOpen} data-last-pressed={page === "4"} onClick={() => handleButtonClick("/cadastro-clientes")}>
-          <PersonAddIcon /> {showButtonText && <p>Cadastro Clientes</p>}
+        <Button data-centralized={isMenuOpen} data-last-pressed={page === "4"} onClick={() => handleButtonClick("/costumer-registration")}>
+          <PersonAddIcon /> {showButtonText && <p>Customer Registration</p>}
         </Button>
-        <Button data-centralized={isMenuOpen} data-last-pressed={page === "5"} onClick={() => handleButtonClick("/cadastro-conta-contabil")}>
-          <AssignmentIndIcon /> {showButtonText && <p>Cadastro Conta Contábil</p>}
+        <Button data-centralized={isMenuOpen} data-last-pressed={page === "5"} onClick={() => handleButtonClick("/account-registration")}>
+          <AssignmentIndIcon /> {showButtonText && <p>Account Registration</p>}
         </Button>
-        <Button data-centralized={isMenuOpen} data-last-pressed={page === "6"} onClick={() => handleButtonClick("/cadastro-plano-contas")}>
-          <ZoomOutMapIcon /> {showButtonText && <p>Plano de Contas Geral</p>}
+        <Button data-centralized={isMenuOpen} data-last-pressed={page === "6"} onClick={() => handleButtonClick("/general-chart-of-accounts")}>
+          <ZoomOutMapIcon /> {showButtonText && <p>General Chart of Accounts</p>}
         </Button>
-        <Button data-centralized={isMenuOpen} data-last-pressed={page === "7"} onClick={() => handleButtonClick("/cadastro-depara-historico")}>
-          <AssignmentIcon /> {showButtonText && <p>Depara Histórico</p>}
+        <Button data-centralized={isMenuOpen} data-last-pressed={page === "7"} onClick={() => handleButtonClick("/mapping-history")}>
+          <AssignmentIcon /> {showButtonText && <p>Mapping History</p>}
         </Button>
         <Button data-centralized={isMenuOpen} disabled={disableMenu} onClick={handleMenuClick}>
           {isMenuOpen ? <MenuOpenIcon /> : <MenuIcon />} {showButtonText && <p>Menu ON/OFF</p>}

@@ -1,34 +1,34 @@
 export const COLUMNS = [
   {
-    Header: "Cod Cliente",
+    Header: "Client Code",
     accessor: "cod_cliente",
   },
   {
-    Header: "Descrição",
+    Header: "Description",
     accessor: "descricao",
   },
   {
-    Header: "Conta Débito",
+    Header: "Debit Account",
     accessor: "conta_debito",
   },
   {
-    Header: "Conta Crédito",
+    Header: "Credit Account",
     accessor: "conta_credito",
   },
   {
-    Header: "Conta C.C Débito",
+    Header: "Cost Center Debit Account",
     accessor: "conta_c_debito",
   },
   {
-    Header: "Conta C.C Crédito",
+    Header: "Cost Center Credit Account",
     accessor: "conta_c_credito",
   },
   {
-    Header: "Fornecedor",
+    Header: "Supplier",
     accessor: "fornecedor",
   },
   {
-    Header: "Obs",
+    Header: "Note",
     accessor: "obs",
   },
 ];

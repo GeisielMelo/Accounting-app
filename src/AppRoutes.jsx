@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Index from "./pages/main/Index";
@@ -29,63 +28,63 @@ const AppRoutes = () => {
         <Route
           path="/home"
           element={
-            <Workbench title="Inicio" page="0">
+            <Workbench title="Home" page="0">
               <Inicio />
             </Workbench>
           }
         />
         <Route
-          path="/quebrar-arquivo"
+          path="/split-file"
           element={
-            <Workbench title="Quebrar arquivo" page="1">
+            <Workbench title="Split File" page="1">
               <QuebrarArquivo />
             </Workbench>
           }
         />
         <Route
-          path="/extrato-bancario"
+          path="/transaction-entry"
           element={
-            <Workbench title="Lançamento Extrato Bancário" page="2">
+            <Workbench title="Transaction Entry" page="2">
               <ExtratoBancario />
             </Workbench>
           }
         />
         <Route
-          path="/atualizar-usuario"
+          path="/profile-update"
           element={
-            <Workbench title="Atualizar Usuário" page="3">
+            <Workbench title="Update Profile" page="3">
               <AtualizarUsuario />
             </Workbench>
           }
         />
         <Route
-          path="/cadastro-clientes"
+          path="/costumer-registration"
           element={
-            <Workbench title="Cadastro Clientes" page="4">
+            <Workbench title="Costumer Registration" page="4">
               <CadastroClientes />
             </Workbench>
           }
         />
         <Route
-          path="/cadastro-conta-contabil"
+          path="/account-registration"
           element={
-            <Workbench title="Cadastro Conta Contábil" page="5">
+            <Workbench title="Account Registration" page="5">
               <CadastroContaContabil />
             </Workbench>
           }
         />
         <Route
-          path="/cadastro-plano-contas"
+          path="/general-chart-of-accounts"
           element={
-            <Workbench title="Cadastro Plano Contas" page="6">
+            <Workbench title="General Chart of Accounts" page="6">
               <CadastroPlanoContas />
             </Workbench>
           }
         />
         <Route
-          path="/cadastro-depara-historico"
+          path="/mapping-history"
           element={
-            <Workbench title="Cadastro Depara Histórico" page="7">
+            <Workbench title="Mapping History" page="7">
               <CadastroDeparaHistorico />
             </Workbench>
           }

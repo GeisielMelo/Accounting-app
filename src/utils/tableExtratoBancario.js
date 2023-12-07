@@ -1,42 +1,42 @@
 export const COLUMNS = [
   {
-    Header: "Descrição Extrato",
+    Header: "Statement Description",
     accessor: "descricao_extrato",
   },
   {
-    Header: "Descrição Lacto",
+    Header: "Journal Description",
     accessor: "descricao_lacto",
   },
   {
-    Header: "Valor Lacto",
+    Header: "Journal Amount",
     accessor: "valor_lacto",
   },
   {
-    Header: "Fornecedor",
+    Header: "Supplier",
     accessor: "fornecedor",
   },
   {
-    Header: "Nota Fiscal",
+    Header: "Invoice",
     accessor: "nota_fiscal",
   },
   {
-    Header: "Data",
+    Header: "Date",
     accessor: "data",
   },
   {
-    Header: "C.Débito",
+    Header: "Cost Center Debit",
     accessor: "c_debito",
   },
   {
-    Header: "C.Credito",
+    Header: "Cost Center Credit",
     accessor: "c_credito",
   },
   {
-    Header: "C.C Débito",
+    Header: "Cost Center Debit (C.C)",
     accessor: "c_c_debito",
   },
   {
-    Header: "C.C Crédito",
+    Header: "Cost Center Credit (C.C)",
     accessor: "c_c_credito",
   },
 ];

@@ -1,6 +1,5 @@
 import { styled } from "styled-components";
 import ScreenRotationIcon from "@mui/icons-material/ScreenRotation";
-import React from "react";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -35,14 +34,14 @@ const Inicio = () => {
   return (
     <Wrapper>
       <Container>
-        <Title>Sistema</Title>
-        <Subtitle>Bem vindo ao sistema de gerenciamento</Subtitle>
+        <Title>Accounting-app</Title>
+        <Subtitle>Welcome to the management system.</Subtitle>
         <Subtitle>
-          Para uma experiência otimizada em dispositivos móveis, como tablets e celulares, é aconselhável habilitar o modo de rotação automática.
+          For an optimized experience on mobile devices, such as tablets and smartphones, it is advisable to enable automatic rotation mode.
           <br />
           {<ScreenRotationIcon />}
         </Subtitle>
-        <Subtitle><span>Importante</span>: As informações contidas nas tabelas são fictícias e foram geradas exclusivamente para fins de teste.</Subtitle>
+        <Subtitle><span>Important</span>: The information in the tables is fictional and has been generated exclusively for testing purposes.</Subtitle>
       </Container>
     </Wrapper>
   );

@@ -72,49 +72,49 @@ const QuebrarArquivo = () => {
     <>
       <Wrapper>
         <Select>
-          <label>Nome do Cliente</label>
-          <Input type="text" value={clientName} onChange={(e) => setClientName(e.target.value)} placeholder="Cliente" />
+          <label>Client Name</label>
+          <Input type="text" value={clientName} onChange={(e) => setClientName(e.target.value)} placeholder="Name" />
         </Select>
 
         <Select>
-          <label>Código do Cliente</label>
-          <Input type="number" value={clientCode} onChange={(e) => setClientCode(e.target.value)} placeholder="Código" />
+          <label>Client Code</label>
+          <Input type="number" value={clientCode} onChange={(e) => setClientCode(e.target.value)} placeholder="Code" />
         </Select>
 
         <Select>
-          <label>Parâmetro</label>
-          <Input type="text" value={optionalParam} onChange={(e) => setOptionalParam(e.target.value)} placeholder="Opcional" />
+          <label>Params</label>
+          <Input type="text" value={optionalParam} onChange={(e) => setOptionalParam(e.target.value)} placeholder="Optional" />
         </Select>
       </Wrapper>
 
       <Wrapper>
         <Select>
-          <label>Bancos</label>
+          <label>Bank</label>
           <select>
-            <option>Selecione o Banco</option>
+            <option>Select a Bank</option>
           </select>
         </Select>
 
         <Select>
-          <label>Plano Contas</label>
+          <label>Account Plan</label>
           <select>
-            <option>Selecione a Conta</option>
+            <option>Select the Account</option>
           </select>
         </Select>
 
         <Select>
-          <label>Conta cabeça?</label>
+          <label>Main Account</label>
           <select>
-            <option>Selecione</option>
-            <option>Sim</option>
-            <option>Não</option>
+            <option>Select</option>
+            <option>Yes</option>
+            <option>No</option>
           </select>
         </Select>
       </Wrapper>
 
       <Wrapper>
         <FileUpload setJsonArray={setJsonArray} />
-        <Button onClick={handleProcessClick}>Processar</Button>
+        <Button onClick={handleProcessClick}>Process</Button>
       </Wrapper>
     </>
   );

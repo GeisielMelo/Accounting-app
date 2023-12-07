@@ -31,7 +31,7 @@ export const GlobalFilter = ({ filter, setFilter }) => {
       <span>
         <SearchIcon />
       </span>
-      <input type="text" value={filter || ""} onChange={(e) => setFilter(e.target.value)} placeholder="Pesquisar..." />
+      <input type="text" value={filter || ""} onChange={(e) => setFilter(e.target.value)} placeholder="Search..." />
     </Input>
   );
 };

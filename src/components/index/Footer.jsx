@@ -135,8 +135,8 @@ const Copyright = styled.div`
 
 const Footer = () => {
   const handleWhatsAppButtonClick = () => {
-    const phone = "55 99 99999-9999";
-    const message = "Olá, gostaria de mais informações sobre o sistema.";
+    const phone = "99 99 99999-9999";
+    const message = "Hello, I would like more information about the system.";
     window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${message}`, "_blank");
   };
 
@@ -145,13 +145,13 @@ const Footer = () => {
       <Contact>
         <Navigation>
           <ul>
-            <li onClick={() => (window.location.href = "#")}>Serviços</li>
-            <li onClick={() => (window.location.href = "#")}>Sobre</li>
+            <li onClick={() => (window.location.href = "#")}>Services</li>
+            <li onClick={() => (window.location.href = "#")}>About</li>
             <li onClick={() => (window.location.href = "#")}>Blog</li>
-            <li onClick={() => (window.location.href = "mailto:app@email.com")}>Contato</li>
+            <li onClick={() => (window.location.href = "mailto:app@email.com")}>Contact</li>
           </ul>
           <button>
-            <p>Locais & Recursos</p>
+            <p>Locales & Resources</p>
             <span>
               <SouthSharpIcon />
             </span>
@@ -166,9 +166,9 @@ const Footer = () => {
               <HomeIcon />
             </div>
             <div>
-              <h1>Endereço</h1>
-              <p>99 Rua Fictícia</p>
-              <p>São Paulo, SP.</p>
+              <h1>Address</h1>
+              <p>N 99 | Road 1892</p>
+              <p>Avenue, US.</p>
             </div>
           </div>
 
@@ -178,7 +178,7 @@ const Footer = () => {
             </div>
             <div>
               <h1>Email</h1>
-              <p>Contato via email</p>
+              <p>Contact us</p>
               <p>app@email.com</p>
             </div>
           </div>
@@ -188,8 +188,8 @@ const Footer = () => {
               <CallSharpIcon />
             </div>
             <div>
-              <h1>Telefone</h1>
-              <p>Contato via telefone</p>
+              <h1>Phone</h1>
+              <p>Contact us</p>
               <p>(000) 9 9999-9999</p>
             </div>
           </div>
@@ -208,7 +208,7 @@ const Footer = () => {
           />
           <img src={Instagram} alt="Instagram logo" onClick={() => window.open("https://www.instagram.com", "_blank")} />
         </div>
-        <p>© 2023 Sistema.</p>
+        <p>© 2023 Accounting-app</p>
         <p>All rights reserved.</p>
         <p>
           Web Design by{" "}

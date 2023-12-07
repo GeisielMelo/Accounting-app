@@ -1,23 +1,22 @@
 export const COLUMNS = [
-    {
-      Header: "Empresa Status",
-      accessor: "empresa_status",
-    },
-    {
-      Header: "Código Externo",
-      accessor: "codigo_externo",
-    },
-    {
-      Header: "CNPJ",
-      accessor: "cnpj",
-    },
-    {
-      Header: "Razão Social",
-      accessor: "razao_social",
-    },
-    {
-      Header: "Plano Contas",
-      accessor: "plano_contas",
-    },
-  ];
-  
+  {
+    Header: "Company Status",
+    accessor: "empresa_status",
+  },
+  {
+    Header: "External Code",
+    accessor: "codigo_externo",
+  },
+  {
+    Header: "CNPJ",
+    accessor: "cnpj",
+  },
+  {
+    Header: "Legal Name",
+    accessor: "razao_social",
+  },
+  {
+    Header: "Chart of Accounts",
+    accessor: "plano_contas",
+  },
+];

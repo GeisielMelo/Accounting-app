@@ -1,7 +1,6 @@
 import { ThemeProvider } from "styled-components";
 import { theme } from "./styles/theme";
 import GlobalStyles from "./styles/GlobalStyles";
-import React from "react";
 import AppRoutes from "./AppRoutes";
 
 const App = () => {
