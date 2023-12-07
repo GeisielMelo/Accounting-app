@@ -2,7 +2,7 @@
 
 Accounting-app is a prototype of a front-end interface with basic styles for a fictional accounting application, where a client can manage their bills and perform other tasks. The main objective here is to build a multifunctional interface without refreshing the application on every click.
 
-> **Note**: This is just a frontend interface. You can simulate authentication by checking the 'DEBUG' checkbx.
+> **Note**: This is just a frontend interface. You can simulate authentication by checking the 'DEBUG' checkbox.
 
 ## Deploy
 
