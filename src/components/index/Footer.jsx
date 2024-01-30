@@ -212,7 +212,7 @@ const Footer = () => {
         <p>All rights reserved.</p>
         <p>
           Web Design by{" "}
-          <a href="https://geisielmelo.netlify.app/" target="_blank" rel="noreferrer">
+          <a href="http://geisielmelo.vercel.app/" target="_blank" rel="noreferrer">
             GeisielMelo
           </a>
         </p>
